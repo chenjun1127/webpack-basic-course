@@ -6,7 +6,7 @@ Webpack可以使用npm安装；
 ```javascript
 npm install webpack -g
 ```
-使用webpack
+####使用webpack
 ```javascript
 npm init  # 会自动生成一个package.json文件
 npm install webpack --save-dev #将webpack增加到package.json文件中
@@ -108,6 +108,67 @@ document.body.appendChild(img);
 ```
 style.css是demo的基本样式
 ```css
-style.css
+body { background: yellow; }
 ```
+####使用配置文件
+1、默认的配置文件为webpack.config.js，为webpack.config.js增加以下代码：
+```javascript
+var webpack = require('webpack');
+var path = require('path');
+module.exports = {
+	entry: './src/js/entry.js',
+	output: {
+		path: path.join(__dirname, 'dist'),
+		filename: 'bundle.js'
+	},
+	//压缩打包的文件
+	plugins: [
+		new webpack.optimize.UglifyJsPlugin({
+			compressor: {
+				warnings: false,
+			},
+		})
+	],
+	module: {
+		loaders: [
+			{test: /\.css$/,loader: 'style!css'}, 
+			{test: /\.(png|jpg)$/,loader: 'url?limit=8192'} /*loader可以省略*/
+		]
+	},
+	devServer: {
+	 
+		colors: true, //终端中输出结果为彩色
+		historyApiFallback: true, //不跳转
+		inline: true, //实时刷新
+		port:3800
+	}
+}
+```
+2、执行程序
+```javascript
+webpack
+```
+此时，可以看到在命令行中出现了带有颜色的成功提示，打开浏览器运行index.html，可以看到具体的页面效果了；
+####使用webpack构建本地服务器
+如果你想让你的浏览器监测代码的修改，并自动刷新修改后的结果，可以使用Webpack提供的一个可选的本地开发服务器，这个本地服务器基于node.js构建，它是一个单独的组件，在webpack中进行配置之前需要单独安装它作为项目依赖；
+```javascript
+npm install webpack-dev-server --save-dev
+```
+dev-server作为webpack配置选项中的一项，具有以下配置选项：
+* contentBase --> 默认webpack-dev-server会为根文件夹提供本地服务器，如果想为另外一个目录下的文件提供本地服务器，应该设置其所在目录。
+* port --> 设置默认监听端口，如果省略，默认为“8080”。
+* inline --> 设置为true，当源文件改变时会自动刷新页面。
+* colors --> 设置为true，使终端输出的文件为彩色的。
+* historyApiFallback --> 在开发单页应用时非常有用，它依赖于HTML5 history API，如果设置为true，所有的跳转将指向index.html。
+在上面配置文件中，修改了端口为3800，
+运行：
+```javascript	
+webpack-dev-server
+```
+在浏览器直接访问：
+```javascript
+http://localhost:3800/webpack-dev-server/bundle
+```
+
+
 
