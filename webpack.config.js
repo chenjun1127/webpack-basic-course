@@ -20,7 +20,8 @@ module.exports = {
 			{test: /\.(png|jpg)$/,loader: 'url?limit=8192'} /*loader可以省略*/
 		]
 	},
-	devServer: {	 
+	devServer: {
+	 
 		colors: true, //终端中输出结果为彩色
 		historyApiFallback: true, //不跳转
 		inline: true, //实时刷新
