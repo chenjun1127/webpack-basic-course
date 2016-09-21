@@ -56,7 +56,7 @@ module.exports = {
 最后是 resolve 配置，配置查找模块的路径和扩展名和别名（方便书写）
 
 #### WebPack开始使用
-首先建立一个webpack-demo文件夹，在里面新建dist、src两个文件夹，再新建一个index.html文件；dist里面存放webpack生成的打包后的js文件，src里面再新建css,img,js等文件夹，用来存放demo所需要的原始数据、图片、js等。完整的目录结构如下所示：
+首先建立一个webpack-demo文件夹，在里面新建dist、src两个文件夹，再新建一个index.html文件；dist里面存放webpack生成的打包后的js文件，src里面再新建css、img、js等文件夹，用来存放demo所需要的原始数据、图片、js等。完整的目录结构如下所示：
 ```javascript
 webpack-dmeo
     >- dist
@@ -95,7 +95,7 @@ module.exports = {
 	},
 }
 ```
-entry.js是一个用来接受模块的js函数；
+entry.js是一个用来接受模块的js文件；
 ```javascript
 require("../css/style.css")
 document.write('It works.' + '<br/>')
