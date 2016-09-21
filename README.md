@@ -171,7 +171,7 @@ webpack-dev-server
 http://localhost:3800/
 ```
 可看到页面效果。
-#### 参考资料：
+#### 更多参考资料：
 * http://www.jianshu.com/p/42e11515c10f#
 * http://www.w2bc.com/Article/50764
 * http://webpack.github.io/docs/
