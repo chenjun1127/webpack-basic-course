@@ -1,5 +1,5 @@
 require("../css/style.css")
-document.write('It works.' + '<br/>')
+document.write('This is a webpack demo!' + '<br/>')
 var Person = require('./module.js')
 document.write(Person.person('jone', 30, 'teacher'));
 
