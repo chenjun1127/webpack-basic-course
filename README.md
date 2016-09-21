@@ -160,6 +160,7 @@ dev-server作为webpack配置选项中的一项，具有以下配置选项：
 * inline --> 设置为true，当源文件改变时会自动刷新页面。
 * colors --> 设置为true，使终端输出的文件为彩色的。
 * historyApiFallback --> 在开发单页应用时非常有用，它依赖于HTML5 history API，如果设置为true，所有的跳转将指向index.html。
+
 在上面配置文件中，修改了端口为3800，
 运行：
 ```javascript	
@@ -167,8 +168,13 @@ webpack-dev-server
 ```
 在浏览器直接访问：
 ```javascript
-http://localhost:3800/webpack-dev-server/bundle
+http://localhost:3800/
 ```
+可看到页面效果。
+#### 参考资料：
+* http://www.jianshu.com/p/42e11515c10f#
+* http://www.w2bc.com/Article/50764
+* http://webpack.github.io/docs/
 
 
 
