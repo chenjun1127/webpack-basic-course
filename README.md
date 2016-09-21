@@ -54,19 +54,60 @@ module.exports = {
 * entry 是页面入口文件配置，可以是一个文件或者多个入口文件，可以是对象格式或者数组格式。output 是对应输出项配置 （即入口文件最终要生成什么名字的文件、存放到哪里）
 * module.loaders 是最关键的一块配置。它告知 webpack 每一种文件都需要使用什么加载器来处理。 所有加载器需要使用npm来加载
 最后是 resolve 配置，配置查找模块的路径和扩展名和别名（方便书写）
+
 #### WebPack开始使用
 首先建立一个webpack-demo文件夹，在里面新建dist、src两个文件夹，再新建一个index.html文件；dist里面存放webpack生成的打包后的js文件，src里面再新建css,img,js等文件夹，用来存放demo所需要的原始数据、图片、js等。完整的目录结构如下所示：
 ```javascript
 webpack-dmeo
->- dist
-  >- bundle.js
->- src
-  >- js
-    >- entry.js
-    >- module.js
-  >- css
-    >- style.css
-  >- img
-    >- pic.png(随便一张图片即可)
+    >- dist
+      >- bundle.js
+    >- src
+      >- js
+        >- entry.js
+        >- module.js
+      >- css
+        >- style.css
+      >- img
+        >- pic.png(随便一张图片即可)
+    index.html
+    package.json
+    webpack.config.js
+```
+首先来看index.html文件，index.html文件只有最基础的html代码，它唯一的目的就是加载打包后的js文件（bundle.js）；
+```javascript
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>webpack-demo</title>
+</head>
+<body>
+	<script src="dist/bundle.js"></script>
+</body>
+</html>
+```
+module.js是一个返回的js模块；
+```javascript
+module.exports = {
+	person: function(name, age, work) {
+		return ('my name is ' + name + ',my age ' + age + ',' + work + ' is my work!');
+	},
+}
+```
+entry.js是一个用来接受模块的js函数；
+```javascript
+require("../css/style.css")
+document.write('It works.' + '<br/>')
+var Person = require('./module.js')
+document.write(Person.person('jone', 30, 'teacher'));
+
+var img = document.createElement('img');
+img.src = require('../img/pic.png');
+document.body.appendChild(img);
+```
+style.css是demo的基本样式
+```css
+style.css
 ```
 
