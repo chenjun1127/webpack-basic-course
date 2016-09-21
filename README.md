@@ -8,8 +8,8 @@ npm install webpack -g
 ```
 ####使用webpack
 ```javascript
-npm init  # 会自动生成一个package.json文件
-npm install webpack --save-dev #将webpack增加到package.json文件中
+npm init  会自动生成一个package.json文件
+npm install webpack --save-dev 将webpack增加到package.json文件中
 ```
 ####WebPack的配置
 每个项目下都必须配置有一个 webpack.config.js ，它的作用如同常规的 gulpfile.js/Gruntfile.js ，就是一个配置项，告诉 webpack 它需要做什么。
