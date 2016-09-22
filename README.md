@@ -148,7 +148,16 @@ module.exports = {
 ```javascript
 webpack
 ```
-此时，可以看到在命令行中出现了带有颜色的成功提示，打开浏览器运行index.html，可以看到具体的页面效果了；
+此时，可以看到在命令行中出现了带有颜色的成功日志，
+```jvascript
+Hash: e964f90ec65eb2c29bb9
+Version: webpack 1.13.2
+Time: 54ms
+Asset Size Chunks Chunk Names
+bundle.js 1.42 kB 0 [emitted] main
+[0] ./entry.js 27 bytes {0} [built]
+```
+打开浏览器运行index.html，可以看到具体的页面效果了；
 ####使用webpack构建本地服务器
 如果你想让你的浏览器监测代码的修改，并自动刷新修改后的结果，可以使用Webpack提供的一个可选的本地开发服务器，这个本地服务器基于node.js构建，它是一个单独的组件，在webpack中进行配置之前需要单独安装它作为项目依赖；
 ```javascript
