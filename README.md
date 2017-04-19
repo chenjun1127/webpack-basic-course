@@ -1,17 +1,17 @@
 # webpack入门教程
-####概述
+#### 概述
 Webpack是一款用户打包前端模块的工具。主要是用来打包在浏览器端使用的javascript的。同时也能转换、捆绑、打包其他的静态资源，包括css、image、font file、template等。个人认为它的优点就是易用，而且常用功能基本都有,另外可以通过自己开发loader和plugin来满足自己的需求。这里就尽量详细的来介绍下一些基本功能的使用。
-####安装
+#### 安装
 Webpack可以使用npm安装； 
 ```javascript
 npm install webpack -g
 ```
-####使用webpack
+#### 使用webpack
 ```javascript
 npm init  会自动生成一个package.json文件
 npm install webpack --save-dev 将webpack增加到package.json文件中
 ```
-####WebPack的配置
+#### WebPack的配置
 每个项目下都必须配置有一个 webpack.config.js ，它的作用如同常规的 gulpfile.js/Gruntfile.js ，就是一个配置项，告诉 webpack 它需要做什么。
 下面是一个比较完整的配置文件：
 ```javascript
@@ -110,7 +110,7 @@ style.css是demo的基本样式
 ```css
 body { background: yellow; }
 ```
-####使用配置文件
+#### 使用配置文件
 1、默认的配置文件为webpack.config.js，为webpack.config.js增加以下代码：
 ```javascript
 var webpack = require('webpack');
@@ -158,7 +158,7 @@ bundle.js 1.42 kB 0 [emitted] main
 [0] ./entry.js 27 bytes {0} [built]
 ```
 打开浏览器运行index.html，可以看到具体的页面效果了；
-####使用webpack构建本地服务器
+#### 使用webpack构建本地服务器
 如果你想让你的浏览器监测代码的修改，并自动刷新修改后的结果，可以使用Webpack提供的一个可选的本地开发服务器，这个本地服务器基于node.js构建，它是一个单独的组件，在webpack中进行配置之前需要单独安装它作为项目依赖；
 ```javascript
 npm install webpack-dev-server --save-dev
